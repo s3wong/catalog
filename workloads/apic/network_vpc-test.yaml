@@ -1,0 +1,23 @@
+apiVersion: infra.nephio.org/v1alpha1
+kind: Network
+metadata:
+  name: vpc-test
+  annotations:
+    config.kubernetes.io/local-config: "true"
+spec:
+  topology: nephio
+  routingTables:
+  - name: vpc-test
+    prefixes:
+    - prefix: 20.21.22.0/24
+    interfaces:
+    - kind: bridgedomain
+      bridgeDomainName: vpc-test
+  bridgeDomains: 
+  - name: vpc-test
+    interfaces:
+    - kind: interface
+      selector:
+        matchExpressions:
+        - {key: nephio.org/cluster-name, operator: Exists}
+      attachmentType: vlan
