@@ -1,0 +1,25 @@
+apiVersion: workload.nephio.org/v1alpha1
+kind: NFDeployment
+metadata: # kpt-merge: example/example
+  name: helloworld
+  namespace: helloworld
+  annotations:
+    internal.kpt.dev/upstream-identifier: 'workload.nephio.org|NFDeployment|example|example'
+spec:
+  provider: helloworld.com
+  interfaces:
+  - name: hello
+    ipv4:
+      address: 1.2.3.4/24
+      gateway: 1.2.3.1
+    vlanID: 111
+  - name: world
+    ipv4:
+      address: 6.7.8.9/24
+      gateway: 6.7.8.1
+    vlanID: 222
+  networkInstances:
+  - name: helloworldnetwork
+    interfaces:
+      - hello
+      - world

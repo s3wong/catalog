@@ -1,0 +1,12 @@
+apiVersion: config.porch.kpt.dev/v1alpha1
+kind: PackageVariant
+metadata:
+  name: helloworld
+spec:
+  upstream:
+    repo: catalog-s3wong-test
+    package: helloworld
+    revision: main
+  downstream:
+    repo: mgmt
+    package: helloworld

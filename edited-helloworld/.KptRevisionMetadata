@@ -1,0 +1,8 @@
+apiVersion: ""
+kind: KptRevisionMetadata
+metadata:
+  name: mgmt-abb9299644345c7c325a395452ab425985e75ff4
+  namespace: default
+  creationTimestamp: "2024-03-18T22:01:20Z"
+  resourceVersion: b38ca009116d67c4f01d613b925b60c254a299ec
+  uid: uid:helloworld:packagevariant-1

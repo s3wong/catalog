@@ -1,0 +1,22 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata: # kpt-merge: /helloworld
+  name: helloworld
+  annotations:
+    config.kubernetes.io/local-config: "true"
+    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|helloworld'
+upstream:
+  type: git
+  git:
+    repo: https://github.com/s3wong/catalog.git
+    directory: helloworld
+    ref: main
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/s3wong/catalog.git
+    directory: helloworld
+    ref: main
+    commit: 43b1fe5772a65d6140a82d358b0116da1c266ef5
+info:
+  description: Hello World
