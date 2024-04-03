@@ -9,5 +9,4 @@ metadata:
 spec:
   networkInstance:
     name: vpc-test
-  cniType: macvlan
   attachmentType: vlan
